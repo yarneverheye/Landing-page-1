@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YourIdea — Early Access</title>
+  <meta name="description" content="Join the waitlist for YourIdea. Be first to try it and get exclusive early-access updates.">
+  <meta property="og:title" content="YourIdea — Early Access">
+  <meta property="og:description" content="Join the waitlist and get early access.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0c;--bg2:#0e1116;--card:#121216;--muted:#9aa0a6;--text:#eef2f6;--accent:#4f8cff;--accent2:#6cf0c2;--ring:#1e2a3d}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{max-width:1060px;margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .logo{font-weight:800;letter-spacing:.2px}
+    .chip{font-size:12px;border:1px solid #17315b;border-radius:999px;padding:6px 10px;background:#0b1a33;color:#cfe0ff}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:30px 0}
+    h1{font-size:clamp(36px,5vw,58px);line-height:1.05;margin:10px 0 14px}
+    .sub{color:var(--muted);font-size:clamp(15px,2vw,18px)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px}
+    form{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .row{display:flex;gap:10px}
+    input[type=email]{flex:1;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f141b;color:var(--text);outline:none}
+    input[type=email]:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(79,140,255,.15)}
+    button{padding:14px 18px;border-radius:12px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b0b0c;font-weight:800;cursor:pointer}
+    button:disabled{opacity:.7;cursor:not-allowed}
+    label.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#cdd6de}
+    .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .mini{background:#0f141b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px;color:#c7d0d9;font-size:14px}
+    .img{aspect-ratio:4/3;border-radius:20px;border:1px solid rgba(255,255,255,.06);background:
+      radial-gradient(900px 500px at -10% -10%, #14305b 0%, transparent 45%),
+      radial-gradient(900px 500px at 120% 120%, #134a34 0%, transparent 45%),
+      linear-gradient(180deg,#0f141b,#0a0d12)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+    .feature{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    .feature h3{margin:2px 0 8px;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+    .notice{margin-top:10px;font-size:12px;color:var(--muted)}
+    .foot{margin-top:40px;display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px}
+    .toast{display:none;margin-top:10px;font-weight:700}
+    .ok{color:#6cf0c2}
+    .bad{color:#ff9aa2}
+    @media (max-width:920px){.hero{grid-template-columns:1fr}.proof,.features{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">YourIdea<span style="color:var(--accent)">.</span></div>
+      <div class="chip">Early access</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="chip">New</div>
+        <h1>Validate your idea. Build what people want.</h1>
+        <p class="sub">Join the waitlist to get early access, product updates, and a launch discount.</p>
+
+        <div class="card">
+          <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+            <p class="hp">
+              <label>Don’t fill this in if you’re human: <input name="bot-field" type="text"></label>
+            </p>
+            <input type="hidden" name="form-name" value="waitlist">
+            <div class="row">
+              <input aria-label="Email address" type="email" name="email" placeholder="you@email.com" required>
+              <button type="submit" id="btn">Join</button>
+            </div>
+            <label class="agree">
+              <input type="checkbox" name="consent" required>
+              <span>I agree to receive emails about early access and updates. Unsubscribe anytime.</span>
+            </label>
+          </form>
+          <div id="ok" class="toast ok">You're on the list.</div>
+          <div id="bad" class="toast bad">Something went wrong. Try again.</div>
+          <div class="proof">
+            <div class="mini">⚡ Setup in minutes</div>
+            <div class="mini">🔒 Privacy-first</div>
+            <div class="mini">🎯 Built for validation</div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Launch</h3>
+            <p class="muted">Publish your page and start sharing today.</p>
+          </div>
+          <div class="feature">
+            <h3>Measure</h3>
+            <p class="muted">Track signups and interest over time.</p>
+          </div>
+          <div class="feature">
+            <h3>Iterate</h3>
+            <p class="muted">Refine your value prop with real data.</p>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span>© <span id="year"></span> YourIdea</span>
+          <span><a href="#" rel="nofollow">Privacy</a> · <a href="#" rel="nofollow">Terms</a></span>
+        </div>
+      </div>
+
+      <div class="img" aria-hidden="true"></div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const form=document.forms.namedItem('waitlist');const btn=document.getElementById('btn');const ok=document.getElementById('ok');const bad=document.getElementById('bad');
+    form.addEventListener('submit',function(){btn.disabled=true;});
+    window.addEventListener('pageshow',function(){btn.disabled=false;});
+    if(!location.hostname.endsWith('.netlify.app')){form.addEventListener('submit',function(e){e.preventDefault();try{const email=new FormData(form).get('email');if(!email)throw 0;const key='waitlist_emails';const x=JSON.parse(localStorage.getItem(key)||'[]');x.push({email,ts:new Date().toISOString()});localStorage.setItem(key,JSON.stringify(x));form.reset();ok.style.display='block';bad.style.display='none';}catch(_){ok.style.display='none';bad.style.display='block';}finally{btn.disabled=false;}});}
+  </script>
+</body>
+</html>
